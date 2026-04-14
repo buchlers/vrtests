@@ -3,20 +3,29 @@
   <head>
     <title>My VR World</title>
     <script src="https://aframe.io/releases/1.4.2/aframe.min.js"></script>
+<script src="https://unpkg.com/aframe-event-set-component@5.0.0/dist/aframe-event-set-component.min.js"></script>
   </head>
   <body>
     <a-scene vr-mode-ui="enabled: true">
 
       <!-- Collectible objects -->
-      <a-sphere position="-2 1 -5" color="gold"
+<a-sphere class="clickable"
+          position="-2 1 -5" 
+          color="gold"
           animation="property: rotation; to: 0 360 0; loop: true; dur: 2000"
+          event-set__mouseenter="scale: 1.2 1.2 1.2"
+          event-set__mouseleave="scale: 1 1 1"
           event-set__click="visible: false">
-      </a-sphere>
+</a-sphere>
 
-      <a-sphere position="2 1 -6" color="gold"
+<a-sphere class="clickable"
+          position="-2 1 -6" 
+          color="gold"
           animation="property: rotation; to: 0 360 0; loop: true; dur: 2000"
+          event-set__mouseenter="scale: 1.2 1.2 1.2"
+          event-set__mouseleave="scale: 1 1 1"
           event-set__click="visible: false">
-      </a-sphere>
+</a-sphere>
 
       <!-- Sky -->
       <a-sky color="#87CEEB"></a-sky>
@@ -29,11 +38,12 @@
       <a-light type="ambient" intensity="0.5"></a-light>
 
       <!-- Player -->
-      <a-entity position="0 1.6 0">
-        <a-camera>
-          <a-cursor></a-cursor>
-        </a-camera>
-      </a-entity>
+<a-entity>
+  <a-camera position="0 1.6 0"></a-camera>
+  <a-entity laser-controls="hand: right"
+            raycaster="objects: .clickable"
+            line="color: red"></a-entity>
+</a-entity>
 
     </a-scene>
   </body>

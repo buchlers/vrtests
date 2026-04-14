@@ -8,6 +8,10 @@
   <body>
     <a-scene vr-mode-ui="enabled: true">
 
+<a-box position="0 0.5 -3" width="2" depth="2" height="1" color="blue"></a-box>
+<a-box position="3 1 -6" width="2" depth="2" height="1" color="blue"></a-box>
+<a-box position="-3 1.5 -9" width="2" depth="2" height="1" color="blue"></a-box>
+
       <!-- Collectible objects -->
 <a-sphere class="clickable"
           position="-2 1 -5" 
@@ -19,7 +23,7 @@
 </a-sphere>
 
 <a-sphere class="clickable"
-          position="-2 1 -6" 
+          position="2 1 -6" 
           color="gold"
           animation="property: rotation; to: 0 360 0; loop: true; dur: 2000"
           event-set__mouseenter="scale: 1.2 1.2 1.2"

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My First VR World</title>
+    <script src="https://aframe.io/releases/1.4.2/aframe.min.js"></script>
+  </head>
+  <body>
+    <a-scene vr-mode-ui="enabled: true">
+      
+      <!-- Sky -->
+      <a-sky color="#87CEEB"></a-sky>
+
+      <!-- Ground -->
+      <a-plane position="0 0 -4" rotation="-90 0 0" width="20" height="20" color="#7BC8A4"></a-plane>
+
+      <!-- Objects -->
+      <a-box position="-1 0.5 -3" color="red"
+       animation="property: rotation; to: 0 360 0; loop: true; dur: 3000">
+      </a-box>
+      <a-sphere position="0 1.25 -5" radius="1.25" color="blue"></a-sphere>
+      <a-cylinder position="1 0.75 -3" radius="0.5" height="1.5" color="yellow"></a-cylinder>
+
+      <!-- Camera (player) -->
+      <a-camera position="0 1.6 0"></a-camera>
+
+    </a-scene>
+  </body>
+</html>
